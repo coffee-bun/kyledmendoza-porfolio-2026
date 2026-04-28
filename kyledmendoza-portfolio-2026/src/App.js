@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "./Js/Home";  // ✅ correct path
+import Home from "./sections/Home";  // Main component for the home page
 
 function App() {
   return <Home />;

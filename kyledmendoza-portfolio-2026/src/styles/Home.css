@@ -1,0 +1,254 @@
+
+/* SECTIONS */
+section {
+  min-height: 100vh;
+  padding: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.page1-section {
+  background-color: #1e1e2f; 
+  color: white;
+}
+
+/* HERO SECTION */
+.page1-section {
+  height: 100vh;
+  background-image: url("C:\Users\Kyle\OneDrive\Desktop\React Projects\kyledmendoza-porfolio-2026\kyledmendoza-portfolio-2026\src\assets\portfolio1colored.png"); /* 🔥 PUT YOUR IMAGE */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+}
+
+/* OVERLAY */
+.page1-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* HERO CONTENT */
+.hero-content {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  max-width: 500px;
+  color: white;
+  z-index: 2;
+  text-align: left;
+}
+.hero-content h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 20px;
+}
+
+.hero-rating {
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+  backdrop-filter: blur(5px);
+}
+.hero-name {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.hero-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+.page2-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* 🔥 vertical split */
+  padding: 0;
+}
+
+/* ========================= */
+/* PAGE 2 PAGE 2 TOP SECTION */
+/* ========================= */
+.page2col1 {
+  flex: 0.1;
+  width: 100%;
+  background-color: #FFFFFA;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.page2col1::before,
+.page2col1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.page2col1::before {
+  left: 0;
+  background: linear-gradient(to right, #aaaaaac0, transparent);
+}
+
+.page2col1::after {
+  right: 0;
+  background: linear-gradient(to left, #aaaaaac0, transparent);
+}
+
+/* SLIDER CONTAINER */
+.tools-slider {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* MOVING TRACK */
+.tools-track {
+  display: flex;
+  width: max-content;
+  animation: scrollTools 20s linear infinite;
+}
+
+/* ICON BOX */
+.tool-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 35px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* IMAGE DEFAULT (GRAY LOOK) */
+.tool-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT (COLOR + ZOOM) */
+.tool-icon:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* PAUSE ANIMATION WHEN HOVERING THE WHOLE BAR */
+.tools-slider:hover .tools-track {
+  animation-play-state: paused;
+}
+/* ANIMATION */
+@keyframes scrollTools {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* BOTTOM LARGER */
+.page2col2 {
+  flex: 0.9; /* 🔥 larger */
+  width: 100%;
+  background-color: #16a085;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* TEXT */
+.page2col1 h2,
+.page2col2 h2 {
+  font-size: 36px;
+}
+
+.page3-section {
+  background-color: #3498db; /* blue */
+}
+
+.page4-section {
+  background-color: #e67e22; /* orange */
+}
+
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+  .page1-section {
+    background-image: url("C:\Users\Kyle\OneDrive\Desktop\React Projects\kyledmendoza-porfolio-2026\kyledmendoza-portfolio-2026\src\assets\portfolio1.png"); /* 🔥 PUT YOUR IMAGE */
+    background-size: cover;
+    background-position: 73% center;
+  }
+  
+    .hero-content {
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
+    max-width: 100%;
+  }
+  /* HERO TEXT */
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+    .hero-name {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-rating {
+    font-size: 12px;
+  }
+
+.page2col1 h2,
+.page2col2 h2 {
+  font-size: 26px;
+}
+
+.tool-icon {
+  width: 45px;
+  height: 45px;
+  margin: 0 15px;
+}
+  /* SECTIONS */
+  section {
+    padding: 60px 20px;
+    
+  }
+}

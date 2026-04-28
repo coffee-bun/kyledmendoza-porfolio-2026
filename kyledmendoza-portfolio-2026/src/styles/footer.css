@@ -1,0 +1,180 @@
+.footer-section {
+  height: 50vh; /* 🔥 reduced from 100vh */
+  min-height: 300px; /* fallback for smaller screens */
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-content {
+  max-width: 700px;
+}
+
+.footer-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.footer-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #cccccc;
+}
+
+.footer-address {
+  font-size: 14px;
+  color: #888;
+}
+.footer-content h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.footer-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.footer-address {
+  font-size: 13px;
+}
+.footer-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+/* BOTTOM BAR */
+.footer-bottom {
+  width: 100%;
+  border-top: 1px solid #222;
+  margin-top: 30px;
+  padding-top: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* LEFT SIDE */
+.footer-left p {
+  margin: 3px 0;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* RIGHT SIDE (ICONS) */
+.footer-right a {
+  color: #aaa;
+  margin-left: 15px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.footer-right a:hover {
+  color: #50bbff;
+}
+
+/* BASE BUTTON */
+.btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+/* CONTACT BUTTON (PRIMARY) */
+.btn.primary {
+  background-color: #50bbff;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #379edb;
+}
+
+/* PROJECT BUTTON (SECONDARY) */
+.btn.secondary {
+  border: 1px solid #50bbff;
+  color: #50bbff;
+}
+
+.btn.secondary:hover {
+  background-color: #50bbff;
+  color: white;
+}
+
+/* LEFT SIDE */
+.footer-left p {
+  margin: 0;
+  font-size: 12px;
+  color: #aaa;
+  white-space: normal;
+  text-align: left;
+}
+
+/* RIGHT SIDE ICONS */
+.footer-right a {
+  color: #aaa;
+  font-size: 18px;
+  margin-left: 15px;
+  transition: 0.3s;
+}
+
+.footer-right a:hover {
+  color: #50bbff;
+}
+@media (max-width: 768px) {
+/* FOOTER FIX */
+.footer-section {
+  height: auto;
+  padding: 40px 20px;
+}
+
+/* STACK CONTENT */
+.footer-bottom {
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+/* LEFT TEXT CENTER */
+.footer-left p {
+  text-align: center;
+  font-size: 11px;
+}
+
+/* ICONS CENTER */
+.footer-right {
+  margin-top: 10px;
+}
+
+.footer-right a {
+  margin: 0 10px;
+}
+
+/* BUTTON STACK */
+.footer-buttons {
+  flex-direction: column;
+  align-items: center; /* 🔥 THIS FIXES IT */
+  justify-content: center;
+  gap: 10px;
+}
+
+/* BUTTON FULL WIDTH (OPTIONAL BUT NICE) */
+.btn {
+  width: 80%;
+  max-width: 250px;
+  margin: 0 auto; /* 🔥 CENTER EACH BUTTON */
+}
+  }
+
