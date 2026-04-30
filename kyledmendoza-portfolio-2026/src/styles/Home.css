@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  overflow-x: hidden; 
+}
+html, body {
+  overflow-x: hidden;
+}
 
 /* SECTIONS */
 section {
@@ -107,12 +114,12 @@ section {
 
 .page2col1::before {
   left: 0;
-  background: linear-gradient(to right, #aaaaaac0, transparent);
+  background: linear-gradient(to right, #eeeeeed7, transparent);
 }
 
 .page2col1::after {
   right: 0;
-  background: linear-gradient(to left, #aaaaaac0, transparent);
+  background: linear-gradient(to left, #eeeeeed7, transparent);
 }
 
 /* SLIDER CONTAINER */
@@ -120,40 +127,45 @@ section {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  padding: 7px 0;
 }
 
 /* MOVING TRACK */
 .tools-track {
   display: flex;
   width: max-content;
-  animation: scrollTools 20s linear infinite;
+  animation: scrollTools 18s linear infinite;
 }
 
 /* ICON BOX */
 .tool-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   margin: 0 35px;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.6); 
   border-radius: 12px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* IMAGE DEFAULT (GRAY LOOK) */
 .tool-icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: grayscale(100%);
   opacity: 1;
   transition: all 0.3s ease;
 }
 
 /* HOVER EFFECT (COLOR + ZOOM) */
 .tool-icon:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.25); /* 🔥 bigger, smoother */
+  z-index: 5;
 }
 
 /* PAUSE ANIMATION WHEN HOVERING THE WHOLE BAR */
@@ -163,30 +175,85 @@ section {
 /* ANIMATION */
 @keyframes scrollTools {
   from {
-    transform: translateX(100%);
+    transform: translateX(5%);
   }
-
   to {
-    transform: translateX(-50%);
+    transform: translateX(-75%);
   }
 }
 
-/* BOTTOM LARGER */
+/* ========================= */
+/* PAGE 2 PAGE 2 BOTTOM SECTION */
+/* ========================= */
 .page2col2 {
-  flex: 0.9; /* 🔥 larger */
+  flex: 1;
   width: 100%;
-  background-color: #16a085;
+  background-color: #FFFFFA; 
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-/* TEXT */
-.page2col1 h2,
-.page2col2 h2 {
-  font-size: 36px;
+/* CONTAINER */
+.overview-container {
+  max-width: 700px;
 }
+/* TITLE */
+.overview-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* DESCRIPTION */
+.overview-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* TAG CONTAINER */
+.overview-tags {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* INDIVIDUAL TAG */
+.tag {
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  color: #333;
+  font-weight: 500;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.tag:hover {
+  background-color: #50bbff;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* EXPERIENCE SECTION */
+.experience-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+
 
 .page3-section {
   background-color: #3498db; /* blue */
@@ -204,12 +271,6 @@ section {
   .menu-icon {
     display: block;
   }
-  .page1-section {
-    background-image: url("C:\Users\Kyle\OneDrive\Desktop\React Projects\kyledmendoza-porfolio-2026\kyledmendoza-portfolio-2026\src\assets\portfolio1.png"); /* 🔥 PUT YOUR IMAGE */
-    background-size: cover;
-    background-position: 73% center;
-  }
-  
     .hero-content {
     bottom: 30px;
     left: 20px;
@@ -236,16 +297,35 @@ section {
     font-size: 12px;
   }
 
-.page2col1 h2,
-.page2col2 h2 {
-  font-size: 26px;
+  .page2col1 h2,
+  .page2col2 h2 {
+    font-size: 26px;
 }
 
-.tool-icon {
-  width: 45px;
-  height: 45px;
-  margin: 0 15px;
-}
+  .page1-section {
+    background-image: url("C:\Users\Kyle\OneDrive\Desktop\React Projects\kyledmendoza-porfolio-2026\kyledmendoza-portfolio-2026\src\assets\portfolio1.png"); /* 🔥 PUT YOUR IMAGE */
+    background-size: cover;
+    background-position: 73% center;
+  }
+  
+  .tool-icon {
+    width: 45px;
+    height: 45px;
+    margin: 0 15px;
+  }
+  .overview-title {
+    font-size: 28px;
+  }
+
+  .overview-description {
+    font-size: 14px;
+  }
+
+  .tag {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
   /* SECTIONS */
   section {
     padding: 60px 20px;
