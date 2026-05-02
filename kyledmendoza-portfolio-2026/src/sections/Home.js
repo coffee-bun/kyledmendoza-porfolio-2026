@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import "../styles/Home.css";
 import Html from "../assets/html-icon.png";
@@ -232,8 +231,7 @@ function Home() {
 
   return (
     <>
-      <Navbar />
-
+    
       <section className="page1-section" id="home">
         <div className="hero-content">
           <div className="hero-rating">
@@ -452,8 +450,6 @@ function Home() {
 </div>
 
 </section>
-      
-
 
       <Footer />
     </>

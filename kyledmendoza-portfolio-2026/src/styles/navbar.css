@@ -64,6 +64,15 @@ body {
   color: #50bbff;
 }
 
+/* ACTIVE PAGE INDICATOR */
+.nav-links a.active {
+  color: #50bbff;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
 
   /* NAVBAR */
