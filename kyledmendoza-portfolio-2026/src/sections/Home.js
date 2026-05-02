@@ -24,6 +24,8 @@ import OutlookIcon from "../assets/outlook-icon.png";
 import JiraIcon from "../assets/jira-icon.png";
 import MablIcon from "../assets/mabl-icon.png";
 import SeleniumIcon from "../assets/selenium-icon.png";
+import SampleImage from "../assets/sample-image.jpg";
+
 
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -341,13 +343,117 @@ function Home() {
         </div>
       </section>
 
-      <section className="page3-section" id="education">
-        <h2>Page 3</h2>
-      </section>
+<section className="page3-section" id="education">
 
-      <section className="page4-section" id="projects">
-        <h2>Page 4</h2>
-      </section>
+  {/* HEADER */}
+  <div className="page3-content">
+    <div className="page3-header">
+      <h3 className="page3-subtitle">PROJECTS</h3>
+      <h1 className="page3-title">
+        I Turn Ideas Into Visual Brand Identities That Lead Markets & Perform
+      </h1>
+      <p className="page3-description">
+        Every single project I deliver comes from extensive experience & a real passion for making impactful designs that set the bar!
+      </p>
+      <button className="page3-button">EXPLORE PROJECTS</button>
+    </div>
+  </div>
+
+  {/* FULL WIDTH SLIDER */}
+  <div className="projects-slider-wrapper">
+
+    {/* LEFT */}
+    <button
+      className="slider-btn left"
+      onClick={() => {
+        document.querySelector(".projects-slider").scrollBy({
+          left: -400,
+          behavior: "smooth",
+        });
+      }}
+    >
+      &#10094;
+    </button>
+
+    {/* SLIDER */}
+    <div className="projects-slider">
+
+      {[
+        {
+          title: "E-Commerce System",
+          desc: "Online store with cart, checkout, and admin dashboard. ",
+          img: SampleImage,
+          tag1: "Website",
+          tag2: "2025",
+        },
+        {
+          title: "School Management System",
+          desc: "Manage students, grades, and schedules.",
+          img: SampleImage,
+          tag1: "System",
+          tag2: "2025",
+        },
+        {
+          title: "Portfolio Website",
+          desc: "Modern personal branding website.",
+          img: SampleImage,
+          tag1: "Website",
+          tag2: "2024",
+        },
+        {
+          title: "Booking System",
+          desc: "Reservation platform.",
+          img: SampleImage,
+          tag1: "App",
+          tag2: "2025",
+        },
+        {
+          title: "Inventory System",
+          desc: "Track stocks and analytics.",
+          img: SampleImage,
+          tag1: "System",
+          tag2: "2024",
+        },
+      ].map((project, index) => (
+        <div
+          className="project-card"
+          key={index}
+          style={{ backgroundImage: `url(${project.img})` }}
+        >
+          <div className="project-tags">
+            <span>{project.tag1}</span>
+            <span>{project.tag2}</span>
+          </div>
+
+          <div className="project-title">{project.title}</div>
+
+          <div className="project-overlay">
+            <h2>{project.title}</h2>
+            <p>{project.desc}</p>
+          </div>
+        </div>
+      ))}
+
+    </div>
+
+    {/* RIGHT */}
+    <button
+      className="slider-btn right"
+      onClick={() => {
+        document.querySelector(".projects-slider").scrollBy({
+          left: 400,
+          behavior: "smooth",
+        });
+      }}
+    >
+      &#10095;
+    </button>
+
+</div>
+
+</section>
+      
+
 
       <Footer />
     </>

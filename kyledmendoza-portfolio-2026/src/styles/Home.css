@@ -475,17 +475,272 @@ section {
     cursor: pointer;
   }
 }
+
+/* ========================= */
+/*      PAGE 3 SECTION */
+/* ========================= */
 .page3-section {
-  background-color: #3498db; 
+  background-color: #FFFFFA;
+  min-height: 100vh; /* Or adjust as needed */
+  display: flex;
+  align-items: flex-start; /* Align content to the top */
+  justify-content: flex-start; /* Align content to the left */
+  padding: 4rem 6rem; 
+  flex-direction: column;
+}
+
+.page3-content {
+  max-width: 800px; /* Constrain text width for readability */
+  width: 100%;
+}
+
+/* Upper left alignment */
+.page3-header {
+  text-align: left;
+}
+
+/* "PROJECTS" - small title */
+.page3-subtitle {
+  font-size: 0.875rem; /* Small */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Catchy phrase - big */
+.page3-title {
+  font-size: 3.5rem; /* Big */
+  line-height: 1.2;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+/* Description */
+.page3-description {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/* Button - aligned with description */
+.page3-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 30px; /* Optional: pill shape */
+  display: inline-block;
+}
+
+.page3-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page3-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .page3-title {
+    font-size: 2.2rem;
+  }
+
+  .page3-description {
+    font-size: 1rem;
+  }
+}
+
+/* Push cards below header */
+.projects-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+
+
+/* Card */
+.project-card {
+  position: relative;
+  height: auto; /* Auto height based on content */
+  min-height: 350px; /* Minimum height */
+  border-radius: 20px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+/* Hover zoom */
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+/* Top tags (Website / 2025) */
+.project-tags {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.project-tags span {
+  background: #fff;
+  color: #000;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Bottom title */
+.project-title {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #000;
+  background: rgba(255,255,255,0.7);
+  padding: 4px 10px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+/* Hover overlay */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically */
+  align-items: center; /* Centers horizontally */
+  text-align: center; /* Centers text */
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+}
+.project-overlay h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+.project-overlay p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 90%; 
+}
+
+/* Show on hover */
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .page4-section {
   background-color: #e67e22; 
 }
 
+/* ========================= */
+/*     SLIDER STRUCTURE      */
+/* ========================= */
+
+.projects-slider-wrapper {
+  width: 100%;
+  margin-top: 3rem;
+  position: relative;
+}
+
+/* Horizontal scroll */
+.projects-slider {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+/* Hide scrollbar */
+.projects-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each card fixed width */
+.project-card {
+  min-width: 300px;
+  height: 280px;
+  flex: 0 0 auto;
+}
 
 /* ========================= */
-/* 📱 MOBILE RESPONSIVE */
+/*        ARROWS             */
+/* ========================= */
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+.slider-btn:hover {
+  background: #333;
+}
+
+.slider-btn.left {
+  left: -20px;
+}
+
+.slider-btn.right {
+  right: -20px;
+}
+
+/* ========================= */
+/*  MOBILE RESPONSIVE */
 /* ========================= */
 @media (max-width: 768px) {
   .menu-icon {
