@@ -481,16 +481,16 @@ section {
 /* ========================= */
 .page3-section {
   background-color: #FFFFFA;
-  min-height: 100vh; /* Or adjust as needed */
+  min-height: 100vh; 
   display: flex;
-  align-items: flex-start; /* Align content to the top */
-  justify-content: flex-start; /* Align content to the left */
+  align-items: flex-start; 
+  justify-content: flex-start; 
   padding: 4rem 6rem; 
   flex-direction: column;
 }
 
 .page3-content {
-  max-width: 800px; /* Constrain text width for readability */
+  max-width: 800px; 
   width: 100%;
 }
 
@@ -501,7 +501,7 @@ section {
 
 /* "PROJECTS" - small title */
 .page3-subtitle {
-  font-size: 0.875rem; /* Small */
+  font-size: 0.875rem; 
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
@@ -511,7 +511,7 @@ section {
 
 /* Catchy phrase - big */
 .page3-title {
-  font-size: 3.5rem; /* Big */
+  font-size: 3.5rem; 
   line-height: 1.2;
   font-weight: 700;
   color: #111;
@@ -536,7 +536,7 @@ section {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 30px; /* Optional: pill shape */
+  border-radius: 30px; 
   display: inline-block;
 }
 
@@ -573,8 +573,8 @@ section {
 /* Card */
 .project-card {
   position: relative;
-  height: auto; /* Auto height based on content */
-  min-height: 350px; /* Minimum height */
+  height: auto; 
+  min-height: 350px; 
   border-radius: 20px;
   overflow: hidden;
   background-size: cover;
@@ -629,9 +629,9 @@ section {
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers vertically */
-  align-items: center; /* Centers horizontally */
-  text-align: center; /* Centers text */
+  justify-content: center;
+  align-items: center; 
+  text-align: center; 
   padding: 2rem;
   opacity: 0;
   transition: opacity 0.4s ease;
