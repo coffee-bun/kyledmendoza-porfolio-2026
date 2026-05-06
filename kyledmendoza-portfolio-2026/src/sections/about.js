@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import "../styles/About.css";
+import Footer from "../components/footer";
 // Import your images - adjust the paths based on your actual file structure
 import PrimaryImage from "../assets/kyle-primary.jpg";
 import HoverImage from "../assets/kyle-hover.jpg";
+import SeleniumIcon from "../assets/selenium-icon.png";
 
 function About() {
   useEffect(() => {
@@ -23,7 +25,7 @@ function About() {
   }, []);
 
   return (
-    <div className="about-page1">
+    <>
       {/* Top Column with Particle Background - Smaller height */}
       <div className="about-page1col1">
         <div className="particles-container">
@@ -87,7 +89,278 @@ function About() {
           </div>
         </div>
       </div>
+
+      {/* About Page 4 - Experiences Section */}
+      <div className="about-page4">
+        <div className="about-page4-content">
+          <span className="about-page4-subtitle">EXPERIENCES</span>
+          <h2 className="about-page4-title">PROFESSIONAL EXPERIENCES</h2>
+          <div className="about-page4-divider"></div>
+          <p className="about-page4-description">
+            Building skills through real-world experience.
+          </p>
+          
+          {/* Experience Entry 1 */}
+          <div className="experience-entry">
+            <div className="experience-left">Team Leader</div>
+            <div className="experience-middle">Boundless AI Inc.</div>
+            <div className="experience-right">2025-2026</div>
+          </div>
+          
+          <div className="experience-divider"></div>
+
+          {/* Experience Entry 2 */}
+          <div className="experience-entry">
+            <div className="experience-left">Game Tester</div>
+            <div className="experience-middle">Boundless AI Inc.</div>
+            <div className="experience-right">2025-2026</div>
+          </div>
+          
+          <div className="experience-divider"></div>
+
+          {/* Experience Cards Container */}
+          <div className="about-experience-cards-container">
+            {/* Card 1 */}
+            <div className="about-experience-card">
+              <div className="about-card-content">
+                <div className="about-card-icon">
+                  <img src={SeleniumIcon} alt="Team Leader Icon" />
+                </div>
+                <h3 className="about-card-role">Team Leader</h3>
+                <p className="about-card-company">Project Leadership Experience</p>
+                <span className="about-card-year">2023 - 2024</span>
+                <p className="about-card-description">
+                  Led a team of 5 developers to successfully deliver AI-powered solutions.
+                  <span className="about-card-more">
+                    {" "}Managed project timelines, conducted code reviews, and mentored junior developers.
+                    Implemented agile methodologies that improved team efficiency by 40%.
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="about-experience-card">
+              <div className="about-card-content">
+                <div className="about-card-icon">
+                  <img src={SeleniumIcon} alt="Game Tester Icon" />
+                </div>
+                <h3 className="about-card-role">Game Tester</h3>
+                <p className="about-card-company">Quality Assurance Experience</p>
+                <span className="about-card-year">2023 - 2024</span>
+                <p className="about-card-description">
+                  Conducted comprehensive quality assurance testing for multiple game projects.
+                  <span className="about-card-more">
+                    {" "}Identified and documented over 200 bugs, performed regression testing, and
+                    collaborated with developers to ensure smooth gameplay experiences.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* About Page 5 - Internship Experiences Section */}
+      <div className="about-page5">
+        <div className="about-page5-content">
+          <span className="about-page5-subtitle">INTERNSHIP</span>
+          <h2 className="about-page5-title">INTERNSHIP EXPERIENCES</h2>
+          <div className="about-page5-divider"></div>
+          <p className="about-page5-description">
+            Where I've learned, contributed, and grown.
+          </p>
+        </div>
+      </div>
+
+      {/* Internship Experience Entry 1 */}
+      <div className="internship-entry">
+        <div className="internship-left">Front-End Developer</div>
+        <div className="internship-middle">Software Research Group (SRG)</div>
+        <div className="internship-right">2024-2025</div>
+      </div>
+
+      <div className="internship-divider"></div>
+
+      {/* Internship Experience Entry 2 */}
+      <div className="internship-entry">
+        <div className="internship-left">Quality Assurance Tester</div>
+        <div className="internship-middle">Software Research Group (SRG)</div>
+        <div className="internship-right">2024-2025</div>
+      </div>
+      
+      <div className="internship-divider"></div>
+
+      <div className="internship-cards-container">
+        {/* Card 1 */}
+        <div className="internship-card">
+          <div className="internship-card-content">
+            <div className="internship-card-icon">
+              <img src={SeleniumIcon} alt="Front-End Developer Icon" />
+            </div>
+            <h3 className="internship-card-role">Front-End Developer</h3>
+            <p className="internship-card-company">Software Research Group (SRG)</p>
+            <span className="internship-card-year">2024 - 2025</span>
+            <p className="internship-card-description">
+              Worked on developing responsive UI components using React.
+              <span className="internship-card-more">
+                {" "}Focused on improving user experience and optimizing performance.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        {/* Card 2 */}
+        <div className="internship-card">
+          <div className="internship-card-content">
+            <div className="internship-card-icon">
+              <img src={SeleniumIcon} alt="QA Tester Icon" />
+            </div>
+            <h3 className="internship-card-role">Quality Assurance Tester</h3>
+            <p className="internship-card-company">Software Research Group (SRG)</p>
+            <span className="internship-card-year">2024 - 2025</span>
+            <p className="internship-card-description">
+              Conducted manual and automated testing to ensure application stability.
+              <span className="internship-card-more">
+                {" "}Reported bugs and collaborated with developers for fixes.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+{/* About Page 6 - Capabilities & Strengths */}
+<div className="about-page6">
+  <div className="about-page6-content">
+    <h2 className="about-page6-title">
+      CAPABILITIES AND STRENGTHS
+    </h2>
+    <div className="about-page6-divider"></div>
+  </div>
+</div>
+
+<div className="capabilities-cards-container">
+  {/* Card 1 */}
+  <div className="capability-card">
+    <div className="capability-icon">
+      <img src={SeleniumIcon} alt="Capability Icon" />
     </div>
+    <h3 className="capability-title">UI/UX Design</h3>
+    <p className="capability-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span className="capability-more">
+        {" "}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </span>
+    </p>
+  </div>
+
+  {/* Card 2 */}
+  <div className="capability-card">
+    <div className="capability-icon">
+      <img src={SeleniumIcon} alt="Capability Icon" />
+    </div>
+    <h3 className="capability-title">Problem Solving</h3>
+    <p className="capability-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span className="capability-more">
+        {" "}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </span>
+    </p>
+  </div>
+
+  {/* Card 3 */}
+  <div className="capability-card">
+    <div className="capability-icon">
+      <img src={SeleniumIcon} alt="Capability Icon" />
+    </div>
+    <h3 className="capability-title">Team Collaboration</h3>
+    <p className="capability-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span className="capability-more">
+        {" "}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </span>
+    </p>
+  </div>
+    <div className="capability-card">
+    <div className="capability-icon">
+      <img src={SeleniumIcon} alt="Capability Icon" />
+    </div>
+    <h3 className="capability-title">UI/UX Design</h3>
+    <p className="capability-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span className="capability-more">
+        {" "}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </span>
+    </p>
+  </div>
+    <div className="capability-card">
+    <div className="capability-icon">
+      <img src={SeleniumIcon} alt="Capability Icon" />
+    </div>
+    <h3 className="capability-title">UI/UX Design</h3>
+    <p className="capability-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span className="capability-more">
+        {" "}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </span>
+    </p>
+  </div>
+    <div className="capability-card">
+    <div className="capability-icon">
+      <img src={SeleniumIcon} alt="Capability Icon" />
+    </div>
+    <h3 className="capability-title">UI/UX Design</h3>
+    <p className="capability-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span className="capability-more">
+        {" "}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </span>
+    </p>
+  </div>
+    <div className="capability-card">
+    <div className="capability-icon">
+      <img src={SeleniumIcon} alt="Capability Icon" />
+    </div>
+    <h3 className="capability-title">UI/UX Design</h3>
+    <p className="capability-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span className="capability-more">
+        {" "}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </span>
+    </p>
+  </div>
+    <div className="capability-card">
+    <div className="capability-icon">
+      <img src={SeleniumIcon} alt="Capability Icon" />
+    </div>
+    <h3 className="capability-title">UI/UX Design</h3>
+    <p className="capability-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span className="capability-more">
+        {" "}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </span>
+    </p>
+  </div>
+    <div className="capability-card">
+    <div className="capability-icon">
+      <img src={SeleniumIcon} alt="Capability Icon" />
+    </div>
+    <h3 className="capability-title">UI/UX Design</h3>
+    <p className="capability-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span className="capability-more">
+        {" "}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </span>
+    </p>
+  </div>
+</div>
+
+{/* Add bottom padding to push footer down without moving it */}
+<div className="content-bottom-padding"></div>
+
+{/* Footer */}
+<Footer />
+    </>
   );
 }
 

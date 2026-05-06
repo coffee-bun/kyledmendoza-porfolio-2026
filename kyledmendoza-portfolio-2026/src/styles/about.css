@@ -346,7 +346,7 @@ html, body {
   }
 }
 
-/* About Page 3 - Person Behind the Work */
+/* About Page 3 */
 .about-page3 {
   width: 100%;
   background: linear-gradient(135deg, #f8f9ff 0%, #FFFFFA 100%);
@@ -511,3 +511,981 @@ html, body {
     transform: translateY(0);
   }
 }
+
+/* About Page 4 - Experiences Section */
+.about-page4 {
+  width: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7ff 100%);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background decoration */
+.about-page4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(circle at 25% 80%, rgba(124, 58, 237, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.about-page4-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtitle Styling */
+.about-page4-subtitle {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #4a90e2, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+/* Title Styling */
+.about-page4-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  position: relative;
+}
+
+/* Divider Line */
+.about-page4-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4a90e2, #7c3aed, #4a90e2);
+  margin: 0 auto 1.5rem auto;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Description Styling */
+.about-page4-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+  position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-page4 {
+    padding: 3rem 1.5rem;
+    min-height: 50vh;
+  }
+
+  .about-page4-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+  .about-page4-title {
+    font-size: 2.2rem;
+  }
+
+  .about-page4-divider {
+    width: 60px;
+    height: 3px;
+  }
+
+  .about-page4-description {
+    font-size: 1rem;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page4 {
+    padding: 2rem 1rem;
+    min-height: 40vh;
+  }
+
+  .about-page4-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+
+  .about-page4-title {
+    font-size: 1.8rem;
+  }
+
+  .about-page4-divider {
+    width: 50px;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-page4-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Optional: Fade-in animation */
+.about-page4-content {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+/* Experience Entry Styling */
+.experience-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 3rem auto 2rem auto;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-entry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(74, 144, 226, 0.05), rgba(124, 58, 237, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-entry:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.experience-entry:hover::before {
+  opacity: 1;
+}
+
+.experience-left {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: left;
+  flex: 1;
+}
+
+.experience-middle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a90e2;
+  text-align: center;
+  flex: 1.5;
+  background: linear-gradient(135deg, #4a90e2, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.experience-right {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  text-align: right;
+  flex: 1;
+}
+
+/* Experience Divider */
+.experience-divider {
+  width: 100%;
+  max-width: 800px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #4a90e2, #7c3aed, #4a90e2, transparent);
+  margin: 1rem auto 0 auto;
+  opacity: 0.5;
+}
+
+/* Update responsive design for experience entry */
+@media (max-width: 768px) {
+  .experience-entry {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.2rem 1.5rem;
+    margin: 2rem 1rem 1.5rem 1rem;
+  }
+  
+  .experience-left {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .experience-middle {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .experience-right {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .experience-divider {
+    width: calc(100% - 2rem);
+    margin: 1rem auto 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-entry {
+    padding: 1rem;
+    margin: 1.5rem 0.5rem 1rem 0.5rem;
+  }
+  
+  .experience-left {
+    font-size: 1rem;
+  }
+  
+  .experience-middle {
+    font-size: 0.9rem;
+  }
+  
+  .experience-right {
+    font-size: 0.85rem;
+  }
+}
+
+/* Container */
+.about-experience-cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Card */
+.about-experience-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top gradient line */
+.about-experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, #4a90e2, #7c3aed);
+}
+
+/* Hover effect */
+.about-experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Content */
+.about-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Icon */
+.about-card-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.3);
+}
+
+.about-card-icon img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+/* Text */
+.about-card-role {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.about-card-company {
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4a90e2, #7c3aed);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0.3rem 0;
+}
+
+.about-card-year {
+  font-size: 0.9rem;
+  color: #777;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Description (collapsed) */
+.about-card-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+
+  max-height: 70px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  position: relative;
+}
+
+/* Hidden text */
+.about-card-more {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Expand on hover */
+.about-experience-card:hover .about-card-description {
+  max-height: 200px;
+}
+
+.about-experience-card:hover .about-card-more {
+  opacity: 1;
+}
+
+/* Optional fade effect */
+.about-card-description::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, white);
+}
+
+.about-experience-card:hover .about-card-description::after {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-experience-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* About Page 5 - Internship Experiences Section */
+.about-page5 {
+  width: 100%;
+  background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background decoration */
+.about-page5::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(circle at 75% 30%, rgba(74, 144, 226, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.about-page5-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtitle Styling */
+.about-page5-subtitle {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #4a90e2, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+/* Title Styling */
+.about-page5-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  position: relative;
+}
+
+/* Divider Line */
+.about-page5-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4a90e2, #7c3aed, #4a90e2);
+  margin: 0 auto 1.5rem auto;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Description Styling */
+.about-page5-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+  position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-page5 {
+    padding: 3rem 1.5rem;
+    min-height: 40vh;
+  }
+
+  .about-page5-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+  .about-page5-title {
+    font-size: 2.2rem;
+  }
+
+  .about-page5-divider {
+    width: 60px;
+    height: 3px;
+  }
+
+  .about-page5-description {
+    font-size: 1rem;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page5 {
+    padding: 2rem 1rem;
+    min-height: 35vh;
+  }
+
+  .about-page5-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+
+  .about-page5-title {
+    font-size: 1.8rem;
+  }
+
+  .about-page5-divider {
+    width: 50px;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-page5-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Optional: Fade-in animation */
+.about-page5-content {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+/* Internship Experience Entry Styling */
+.internship-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 3rem auto 2rem auto;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.internship-entry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(74, 144, 226, 0.05), rgba(124, 58, 237, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.internship-entry:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.internship-entry:hover::before {
+  opacity: 1;
+}
+
+.internship-left {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: left;
+  flex: 1;
+}
+
+.internship-middle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a90e2;
+  text-align: center;
+  flex: 1.5;
+  background: linear-gradient(135deg, #4a90e2, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.internship-right {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  text-align: right;
+  flex: 1;
+}
+
+/* Internship Divider */
+.internship-divider {
+  width: 100%;
+  max-width: 800px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #4a90e2, #7c3aed, #4a90e2, transparent);
+  margin: 1rem auto 0 auto;
+  opacity: 0.5;
+}
+
+/* Make sure the container allows full width */
+.about-page5-content {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ensure entries take full width of content */
+.about-page5-content .internship-entry,
+.about-page5-content .internship-divider {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Responsive Design for Internship Entries */
+@media (max-width: 768px) {
+  .internship-entry {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.2rem 1.5rem;
+    margin: 2rem auto 1.5rem auto;
+    width: calc(100% - 2rem);
+    max-width: 800px;
+  }
+  
+  .internship-left {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .internship-middle {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .internship-right {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .internship-divider {
+    width: calc(100% - 2rem);
+    margin: 0.8rem auto 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .internship-entry {
+    padding: 1rem;
+    margin: 1.5rem auto 1rem auto;
+    width: calc(100% - 1rem);
+  }
+  
+  .internship-left {
+    font-size: 1rem;
+  }
+  
+  .internship-middle {
+    font-size: 0.9rem;
+  }
+  
+  .internship-right {
+    font-size: 0.85rem;
+  }
+  
+  .internship-divider {
+    width: calc(100% - 1rem);
+  }
+}
+
+/* Container */
+.internship-cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+   background: transparent;
+}
+
+/* Card */
+.internship-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 320px;
+  
+}
+.internship-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* Description (collapsed by default) */
+.internship-card-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  max-height: 70px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  position: relative;
+}
+
+/* Hidden extra text */
+.internship-card-more {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Expand on hover */
+.internship-card:hover .internship-card-description {
+  max-height: 200px;
+}
+
+.internship-card:hover .internship-card-more {
+  opacity: 1;
+}
+
+/* Optional fade effect (premium look) */
+.internship-card-description::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, white);
+}
+
+.internship-card:hover .internship-card-description::after {
+  display: none;
+}
+/* Top gradient accent */
+.internship-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, #4a90e2, #7c3aed);
+}
+
+/* Hover effect */
+.internship-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon */
+.internship-card-icon img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+
+}
+.internship-card-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.3);
+}
+
+
+/* Text Styling */
+.internship-card-role {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.internship-card-company {
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4a90e2, #7c3aed);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0.3rem 0;
+}
+
+.internship-card-year {
+  font-size: 0.9rem;
+  color: #777;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.internship-card-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .internship-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About Page 6 Section */
+.about-page6 {
+  width: 100%;
+  background: #ffffff;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Content Wrapper */
+.about-page6-content {
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Title */
+.about-page6-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+
+/* Black Divider */
+.about-page6-divider {
+  width: 80px;
+  height: 3px;
+  background: #000000;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Container */
+.capabilities-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto 60px auto; /* Changed from 3rem auto 0 auto to 3rem auto 60px auto */
+  padding: 0 1rem;
+}
+
+/* Card */
+.capability-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover */
+.capability-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon (same style consistency) */
+.capability-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a90e2, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.capability-icon img {
+  width: 30px;
+  filter: brightness(0) invert(1);
+}
+
+/* Title */
+.capability-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.8rem;
+}
+
+/* Description */
+.capability-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+
+  /* limit height initially */
+  max-height: 70px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* Hidden extra text */
+.capability-more {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover expand */
+.capability-card:hover .capability-description {
+  max-height: 200px;
+}
+
+.capability-card:hover .capability-more {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .capabilities-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer spacing - adds space before footer */
+.footer-spacing {
+  height: 60px;
+  width: 100%;
+}
+
+/* Optional: Adjust spacing for mobile */
+@media (max-width: 768px) {
+  .footer-spacing {
+    height: 40px;
+  }
+}
+
