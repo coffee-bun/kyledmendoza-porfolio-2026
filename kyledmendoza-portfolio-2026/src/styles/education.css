@@ -1,0 +1,586 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* PAGE 1 FULL SCREEN */
+.education-page1 {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  gap: 4rem;
+}
+
+/* LEFT SIDE */
+.education-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.graduate-img {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* LOGO OVERLAY */
+.pup-logo {
+  position: absolute;
+  bottom: -20px;
+  right: 80px;
+  width: 90px;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* RIGHT SIDE */
+.education-right {
+  flex: 1.2;
+  max-width: 600px;
+}
+
+/* TITLE */
+.education-title {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.education-divider {
+  width: 60px;
+  height: 3px;
+  background: #000;
+  margin-bottom: 1.5rem;
+}
+
+/* Mobile fix */
+@media (max-width: 900px) {
+  .education-divider {
+    margin: 0 auto 1.5rem auto;
+  }
+}
+
+/* UNIVERSITY NAME */
+.university-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+/* META INFO */
+.education-location,
+.education-year {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* DESCRIPTION */
+.education-description {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .education-page1 {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .education-right {
+    max-width: 100%;
+  }
+
+  .pup-logo {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+/* PAGE 2 */
+.education-page2 {
+  width: 100%;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+  margin-bottom: -6rem;
+}
+
+/* HEADER */
+.education-page2-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.education-page2-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.education-page2-divider {
+  width: 70px;
+  height: 3px;
+  background: #000;
+  margin: 1rem auto 0;
+}
+
+/* GROUP */
+.subject-group {
+  margin-bottom: 3rem;
+}
+
+.subject-group h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #4a90e2;
+}
+
+/* GRID (MOBILE FIRST) */
+.subject-cards {
+  display: grid;
+  grid-template-columns: 1fr; /* ✅ default mobile */
+  gap: 1rem;
+}
+
+/* CARD */
+.subject-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* TOP ACCENT */
+.subject-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #4a90e2, #7c3aed);
+}
+
+/* HOVER */
+.subject-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* TITLE */
+.subject-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.4rem;
+}
+
+/* DESCRIPTION */
+.subject-card p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.5;
+
+  max-height: 50px;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+/* EXTRA TEXT */
+.subject-more {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* EXPAND */
+.subject-card:hover p {
+  max-height: 140px;
+}
+
+.subject-card:hover .subject-more {
+  opacity: 1;
+}
+
+/* FADE EFFECT */
+.subject-card p::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 18px;
+  background: linear-gradient(to bottom, transparent, white);
+}
+
+.subject-card:hover p::after {
+  display: none;
+}
+
+/* ✅ TABLET */
+@media (min-width: 600px) {
+  .subject-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ✅ DESKTOP */
+@media (min-width: 1024px) {
+  .subject-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .education-page2-header h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* PAGE 3 */
+.education-page3 {
+  width: 100%;
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+/* HEADER */
+.education-page3-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.education-page3-header h2 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.education-page3-divider {
+  width: 70px;
+  height: 3px;
+  background: #000;
+  margin: 1rem auto 0;
+}
+
+/* SECTION TITLES */
+.education-page3 h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: #4a90e2;
+}
+
+/* LEARNING CARDS */
+.learning-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+}
+
+.learning-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.learning-card:hover {
+  transform: translateY(-5px);
+}
+
+.learning-card h4 {
+  margin-bottom: 0.5rem;
+  color: #1a1a2e;
+}
+
+.learning-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* VALUES */
+.values-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.value-card {
+  padding: 0.7rem 1.2rem;
+  border-radius: 20px;
+  background: #f3f3f3;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.value-card:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+/* GALLERY */
+.class-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+.gallery-item {
+  background: #ddd;
+  height: 120px;
+  border-radius: 12px;
+}
+
+/* DESCRIPTION */
+.gallery-description {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* TABLET */
+@media (min-width: 600px) {
+  .learning-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .class-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .learning-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .class-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .education-page3-header h2 {
+    font-size: 2.6rem;
+  }
+}
+
+.class-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto 1.5rem;
+}
+
+.gallery-item {
+  background: #f8f9fa;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 16 / 10;
+  cursor: pointer; /* Shows it's clickable */
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.gallery-item-content {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-item-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gallery-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-image img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* DESCRIPTION */
+.gallery-description {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* MODAL STYLES */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  animation: zoomIn 0.3s ease;
+  cursor: default;
+}
+
+.modal-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
+  color: #4a90e2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* TABLET */
+@media (min-width: 600px) {
+  .learning-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .class-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+  }
+  
+  .gallery-item {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .learning-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .class-gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .gallery-item {
+    aspect-ratio: 16 / 9;
+  }
+
+  .education-page3-header h2 {
+    font-size: 2.6rem;
+  }
+}
