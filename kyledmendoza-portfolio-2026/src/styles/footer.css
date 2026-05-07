@@ -1,7 +1,7 @@
 .footer-section {
-  height: 50vh; /* 🔥 reduced from 100vh */
-  min-height: 300px; /* fallback for smaller screens */
-  background-color: black;
+  height: 50vh; 
+  min-height: 300px; 
+  background: #0f0f0f; 
   color: white;
   display: flex;
   align-items: center;
@@ -84,33 +84,36 @@
 
 /* BASE BUTTON */
 .btn {
-  padding: 10px 20px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 14px;
-  border-radius: 25px;
+  border-radius: 50px;
   transition: 0.3s ease;
   font-weight: 500;
 }
 
 /* CONTACT BUTTON (PRIMARY) */
 .btn.primary {
-  background-color: #50bbff;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .btn.primary:hover {
-  background-color: #379edb;
+  background-color: #444;
+  transform: translateY(-2px);
 }
 
 /* PROJECT BUTTON (SECONDARY) */
 .btn.secondary {
-  border: 1px solid #50bbff;
-  color: #50bbff;
+  border: 1px solid white;
+  color: white;
 }
 
 .btn.secondary:hover {
-  background-color: #50bbff;
-  color: white;
+  background-color: white;
+  color: #1a1a1a;
+  transform: translateY(-2px);
 }
 
 /* LEFT SIDE */

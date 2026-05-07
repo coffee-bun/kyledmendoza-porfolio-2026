@@ -24,6 +24,15 @@ import JiraIcon from "../assets/jira-icon.png";
 import MablIcon from "../assets/mabl-icon.png";
 import SeleniumIcon from "../assets/selenium-icon.png";
 import SampleImage from "../assets/sample-image.jpg";
+import QualityImage from "../assets/qa-icon.png";
+import DesignImage from "../assets/webdesign-icon.png";
+import FrontEmdImage from "../assets/frontend-icon.png";
+import WebDevImage from "../assets/webdev-icon.png";
+import GraphicImage from "../assets/graphic-icon.png";
+import VideoImage from "../assets/video-icon.png";
+import PhotoImage from "../assets/photography-icon.png";
+import MicroImage from "../assets/office-icon.png";
+import FmsImage from "../assets/projects/finance-2.png";
 
 
 function Home() {
@@ -42,49 +51,44 @@ function Home() {
 
   const experiences = [
     {
-      icon: JiraIcon,
+      icon: QualityImage,
       title: "Quality Assurance",
       desc: "Experienced in testing applications, identifying bugs, and ensuring high-quality user experiences through structured QA processes."
     },
     {
-      icon: FigmaIcon,
+      icon: DesignImage,
       title: "Web Designing",
       desc: "Skilled in creating visually appealing and user-friendly interfaces using modern design tools and UI/UX principles."
     },
     {
-      icon: ReactIcon,
+      icon: FrontEmdImage,
       title: "Front-End Development",
       desc: "Building responsive and interactive websites using HTML, CSS, JavaScript, and modern frameworks like React."
     },
     {
-      icon: Html,
+      icon: WebDevImage,
       title: "Web Development",
       desc: "Strong foundation in building structured and optimized web pages using modern web technologies."
     },
     {
-      icon: CanvaIcon,
+      icon: GraphicImage,
       title: "Graphic Designing",
-      desc: "Creating engaging and visually appealing graphics for branding, social media, and marketing."
+      desc: "Experienced in creating visually appealing designs for social media, presentations, and creative projects using tools such as Canva, Adobe Photoshop, and Lightroom."
     },
-    {
-      icon: CanvaIcon,
-      title: "Graphic 2 Designing",
-      desc: "Creating engaging and visually appealing graphics for branding, social media, and marketing."
+      {
+      icon: VideoImage,
+      title: "Video Editing",
+      desc: "Passionate about video editing with hands-on experience using Filmora, CapCut, and Adobe editing tools to create engaging content for social media, presentations, and creative projects."
     },
-    {
-      icon: CanvaIcon,
-      title: "Graphic 3 Designing",
-      desc: "Creating engaging and visually appealing graphics for branding, social media, and marketing."
+     {
+      icon: PhotoImage,
+      title: "Photography",
+      desc: "Capturing creative and meaningful photos as both a hobby and skill, with experience in photo composition, editing, and visual storytelling for personal and school-related projects."
     },
-    {
-      icon: CanvaIcon,
-      title: "Graphic 4 Designing",
-      desc: "Creating engaging and visually appealing graphics for branding, social media, and marketing."
-    },
-    {
-      icon: CanvaIcon,
-      title: "Graphic 5 Designing",
-      desc: "Creating engaging and visually appealing graphics for branding, social media, and marketing."
+          {
+      icon: MicroImage,
+      title: "Microsoft Office",
+      desc: "Experienced in using Microsoft Office tools for creating documents, presentations, spreadsheets, and reports, especially for academic projects, research, and documentation during college."
     }
   ];
 
@@ -228,6 +232,7 @@ function Home() {
       }
     };
   }, []);
+  
 
   return (
     <>
@@ -239,9 +244,9 @@ function Home() {
           </div>
           <h1 className="hero-name">Kyle Mendoza</h1>
           <p className="hero-description">
-            I'm Kyle Mendoza, your Creative Design partner helping businesses & startups 
-            replace digital noise with strategic intent by building impactful visual 
-            identities that turn browsers into believers.
+            I’m Kyle D. Mendoza, your Quality Assurance and Development partner dedicated to
+            transforming complex software challenges into seamless, high-performance digital
+            experiences that ensure every user interaction is reliable, intuitive, and flawlessly executed.
           </p>
         </div>
       </section>
@@ -279,10 +284,9 @@ function Home() {
           <div className="overview-container">
             <h2 className="overview-title">Overview</h2>
             <p className="overview-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Creative Professional with a passion for building clean, user-focused designs while
+              contributing meaningful and dependable digital services to the community.
+  
             </p>
             <div className="overview-tags">
               <span className="tag">Creative</span>
@@ -348,10 +352,10 @@ function Home() {
     <div className="page3-header">
       <h3 className="page3-subtitle">PROJECTS</h3>
       <h1 className="page3-title">
-        I Turn Ideas Into Visual Brand Identities That Lead Markets & Perform
+        Transforming Ideas Into Creative Digital Experiences That Are Functional, Modern, and Impactful.
       </h1>
       <p className="page3-description">
-        Every single project I deliver comes from extensive experience & a real passion for making impactful designs that set the bar!
+       Each project I create is driven by creativity, continuous learning, and a passion for building meaningful digital experiences
       </p>
       <button className="page3-button">EXPLORE PROJECTS</button>
     </div>
@@ -378,10 +382,10 @@ function Home() {
 
       {[
         {
-          title: "E-Commerce System",
-          desc: "Online store with cart, checkout, and admin dashboard. ",
-          img: SampleImage,
-          tag1: "Website",
+          title: "Healthcare System",
+          desc: "A healthcare management system developed for our college thesis in collaboration with San Mateo Doctors Hospital, designed to improve patient record management, appointment handling, and hospital workflow efficiency.",
+          img: FmsImage,
+          tag1: "System",
           tag2: "2025",
         },
         {

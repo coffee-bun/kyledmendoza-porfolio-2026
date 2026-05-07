@@ -224,52 +224,17 @@ section {
 }
 
 .tag {
-  padding: 8px 18px;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 12px 28px;
   font-size: 13px;
   border-radius: 999px;
-  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-  color: #ffffff;
   font-weight: 500;
   letter-spacing: 0.3px;
-  box-shadow: 
-    0 4px 10px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
   transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   overflow: hidden;
-}
-
-.tag::before {
-  content: "";
-  position: absolute;
-  top: -100%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,255,255,0.25),
-    transparent 70%
-  );
-  transform: rotate(25deg);
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-
-.tag:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 
-    0 6px 15px rgba(0, 0, 0, 0.35),
-    0 0 12px rgba(80, 187, 255, 0.25);
-  border-color: rgba(80, 187, 255, 0.5);
-}
-
-/* Shine animation */
-.tag:hover::before {
-  top: 120%;
-  opacity: 1;
 }
 
 .experience-card {
@@ -567,8 +532,6 @@ section {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
-
-
 
 /* Card */
 .project-card {

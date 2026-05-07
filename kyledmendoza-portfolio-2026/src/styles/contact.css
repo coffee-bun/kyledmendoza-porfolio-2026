@@ -1,0 +1,237 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ensure the page takes up the full screen with no gaps */
+.page-container {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Container for the sections */
+.contact-columns {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* Common styling for both sections to center text */
+.contact-column-top, .column-bottom {
+  flex: 1;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+}
+
+/* Optional: Adding different colors just so you can see the split */
+.contact-column-top {
+  flex: 1.5; 
+  background-color: #f8f9fa; 
+}
+
+.column-bottom {
+  background-color: #e9ecef;
+}
+
+/* Clean up H1 margins to keep centering perfect */
+h1 {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* ... keep your previous page-container and column styles ... */
+
+.contact-header {
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* The "CONTACTS" small title */
+.contact-small-title.contact {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* The catchy phrase */
+.contact-catchy-phrase.contact {
+  font-size: 2rem; 
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .contact-catchy-phrase.contact {
+    font-size: 1.8rem;
+  }
+}
+/* ... keep your previous styles ... */
+
+/* The short description */
+.contact-description.contact {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 1.5rem;
+  max-width: 600px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Ensure the catchy phrase doesn't hug the description too tight */
+.contact-catchy-phrase.contact {
+  margin-bottom: 0.5rem;
+}
+
+/* Button Wrapper */
+.contact-buttons-container {
+  display: flex;
+  justify-content: center; 
+  gap: 20px;               
+  margin-top: 2.5rem;
+}
+
+/* Base styling for both buttons */
+.contact-buttons-container button {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px; /* Rounded pill shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+/* Primary Button (Contact Me) */
+.btn-contact-me.contact {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.btn-contact-me.contact:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+
+/* Secondary Button (Explore Projects) */
+.btn-explore.contact {
+  background-color: transparent;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a !important; 
+}
+
+.btn-explore.contact:hover {
+  background-color: #1a1a1a;
+  color: white;
+  transform: translateY(-2px);
+}
+/* ... keep your page-container and column-top styles ... */
+
+.column-bottom {
+  background-color: #000000; /* Solid Black */
+  flex: 1;
+}
+
+.social-grid {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.social-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #222; /* Darker divider for black theme */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  background-color: #000000;
+  color: #ffffff; /* White text */
+}
+
+.social-item:first-child {
+  border-left: none;
+}
+
+/* Updated Hover: Glow effect and slight lift */
+.social-item:hover {
+  background-color: #111; 
+  flex: 1.3; 
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.05);
+}
+
+/* Icon Container Styling */
+.social-icon-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.social-item:hover .social-icon-wrapper {
+  transform: scale(1.2); /* Icon grows on hover */
+}
+
+/* Placeholder icon styling (remove when adding your own) */
+.placeholder-icon {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+/* Text adjustments for the dark theme */
+.social-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.social-item p {
+  font-size: 0.85rem;
+  color: #888; /* Dimmer secondary text */
+  margin: 0;
+}
+
+.social-item:hover p {
+  color: #ffffff; /* Secondary text brightens on hover */
+}
+
+@media (max-width: 768px) {
+  .social-grid {
+    flex-direction: column;
+  }
+  .social-item {
+    border-left: none;
+    border-top: 1px solid #222;
+  }
+}
