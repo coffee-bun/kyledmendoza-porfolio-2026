@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import Footer from "../components/footer";
 import "../styles/Home.css";
+import { Link } from "react-router-dom";
 import Html from "../assets/html-icon.png";
 import Css from "../assets/css-icon.png";
 import JavaScript from "../assets/javascript-icon.png";
@@ -33,6 +34,11 @@ import VideoImage from "../assets/video-icon.png";
 import PhotoImage from "../assets/photography-icon.png";
 import MicroImage from "../assets/office-icon.png";
 import FmsImage from "../assets/projects/finance-2.png";
+import AIImage from "../assets/projects/mypupqc-1.png";
+import SISImage from "../assets/projects/flor-2.png";
+import EcoImage from "../assets/projects/eco-1.png";
+import VividImage from "../assets/projects/vivid-1.jpg";
+import TroubleImage from "../assets/troubleshoot-icon.png";
 
 
 function Home() {
@@ -74,6 +80,11 @@ function Home() {
       icon: GraphicImage,
       title: "Graphic Designing",
       desc: "Experienced in creating visually appealing designs for social media, presentations, and creative projects using tools such as Canva, Adobe Photoshop, and Lightroom."
+    },
+          {
+      icon: TroubleImage,
+      title: "Troubleshooting",
+      desc: "Has a experience in resolving common hardware, software, and system-related issues.Familiar with diagnosing technical problems, performing basic maintenance and providing practical solutions"
     },
       {
       icon: VideoImage,
@@ -233,6 +244,86 @@ function Home() {
     };
   }, []);
   
+    // Modal functionality using React useEffect
+  useEffect(() => {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalTag1 = document.getElementById('modalTag1');
+    const modalTag2 = document.getElementById('modalTag2');
+    const closeBtn = document.querySelector('.close-modal');
+    
+    // Function to open modal
+    function openModal(projectData) {
+      if (modalImg && modalTitle && modalDesc && modalTag1 && modalTag2) {
+        modalImg.src = projectData.img;
+        modalTitle.textContent = projectData.title;
+        modalDesc.textContent = projectData.desc;
+        modalTag1.textContent = projectData.tag1;
+        modalTag2.textContent = projectData.tag2;
+        if (modal) {
+          modal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        }
+      }
+    }
+    
+    // Listen for custom event from card clicks
+    const handleOpenModal = (event) => {
+      openModal(event.detail);
+    };
+    
+    window.addEventListener('openModal', handleOpenModal);
+    
+    // Close modal when clicking close button
+    const handleCloseClick = () => {
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    };
+    
+    // Close modal when clicking outside
+    const handleModalClick = (event) => {
+      if (event.target === modal) {
+        if (modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      }
+    };
+    
+    // Close modal with Escape key
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape' && modal && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    };
+    
+    if (closeBtn) {
+      closeBtn.addEventListener('click', handleCloseClick);
+    }
+    
+    if (modal) {
+      modal.addEventListener('click', handleModalClick);
+    }
+    
+    document.addEventListener('keydown', handleKeyDown);
+    
+    // Cleanup event listeners
+    return () => {
+      window.removeEventListener('openModal', handleOpenModal);
+      if (closeBtn) {
+        closeBtn.removeEventListener('click', handleCloseClick);
+      }
+      if (modal) {
+        modal.removeEventListener('click', handleModalClick);
+      }
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <>
@@ -345,115 +436,159 @@ function Home() {
         </div>
       </section>
 
-<section className="page3-section" id="education">
+ 
+      <section className="page3-section" id="education">
 
-  {/* HEADER */}
-  <div className="page3-content">
-    <div className="page3-header">
-      <h3 className="page3-subtitle">PROJECTS</h3>
-      <h1 className="page3-title">
-        Transforming Ideas Into Creative Digital Experiences That Are Functional, Modern, and Impactful.
-      </h1>
-      <p className="page3-description">
-       Each project I create is driven by creativity, continuous learning, and a passion for building meaningful digital experiences
-      </p>
-      <button className="page3-button">EXPLORE PROJECTS</button>
-    </div>
+        {/* HEADER */}
+<div className="page3-content">
+  <div className="page3-header">
+    <h3 className="page3-subtitle">PROJECTS</h3>
+
+    <h1 className="page3-title">
+      Transforming Ideas Into Creative Digital Experiences That Are Functional, Modern, and Impactful.
+    </h1>
+
+    <p className="page3-description">
+      Each project I create is driven by creativity, continuous learning, and a passion for building meaningful digital experiences
+    </p>
+
+    <Link to="/projects" className="page3-link">
+      <button className="page3-button">
+        EXPLORE PROJECTS
+      </button>
+    </Link>
   </div>
-
-  {/* FULL WIDTH SLIDER */}
-  <div className="projects-slider-wrapper">
-
-    {/* LEFT */}
-    <button
-      className="slider-btn left"
-      onClick={() => {
-        document.querySelector(".projects-slider").scrollBy({
-          left: -400,
-          behavior: "smooth",
-        });
-      }}
-    >
-      &#10094;
-    </button>
-
-    {/* SLIDER */}
-    <div className="projects-slider">
-
-      {[
-        {
-          title: "Healthcare System",
-          desc: "A healthcare management system developed for our college thesis in collaboration with San Mateo Doctors Hospital, designed to improve patient record management, appointment handling, and hospital workflow efficiency.",
-          img: FmsImage,
-          tag1: "System",
-          tag2: "2025",
-        },
-        {
-          title: "School Management System",
-          desc: "Manage students, grades, and schedules.",
-          img: SampleImage,
-          tag1: "System",
-          tag2: "2025",
-        },
-        {
-          title: "Portfolio Website",
-          desc: "Modern personal branding website.",
-          img: SampleImage,
-          tag1: "Website",
-          tag2: "2024",
-        },
-        {
-          title: "Booking System",
-          desc: "Reservation platform.",
-          img: SampleImage,
-          tag1: "App",
-          tag2: "2025",
-        },
-        {
-          title: "Inventory System",
-          desc: "Track stocks and analytics.",
-          img: SampleImage,
-          tag1: "System",
-          tag2: "2024",
-        },
-      ].map((project, index) => (
-        <div
-          className="project-card"
-          key={index}
-          style={{ backgroundImage: `url(${project.img})` }}
-        >
-          <div className="project-tags">
-            <span>{project.tag1}</span>
-            <span>{project.tag2}</span>
-          </div>
-
-          <div className="project-title">{project.title}</div>
-
-          <div className="project-overlay">
-            <h2>{project.title}</h2>
-            <p>{project.desc}</p>
-          </div>
-        </div>
-      ))}
-
-    </div>
-
-    {/* RIGHT */}
-    <button
-      className="slider-btn right"
-      onClick={() => {
-        document.querySelector(".projects-slider").scrollBy({
-          left: 400,
-          behavior: "smooth",
-        });
-      }}
-    >
-      &#10095;
-    </button>
-
 </div>
 
-</section>
+        {/* FULL WIDTH SLIDER */}
+        <div className="projects-slider-wrapper">
+
+          {/* LEFT */}
+          <button
+            className="slider-btn left"
+            onClick={() => {
+              const slider = document.querySelector(".projects-slider");
+              if (slider) {
+                slider.scrollBy({
+                  left: -400,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
+            &#10094;
+          </button>
+
+          {/* SLIDER */}
+          <div className="projects-slider">
+
+            {[
+              {
+                title: "Healthcare System",
+                desc: "A healthcare management system developed for our college thesis in collaboration with San Mateo Doctors Hospital, designed to improve patient record management, appointment handling, and hospital workflow efficiency.",
+                img: FmsImage,
+                tag1: "System",
+                tag2: "2025",
+              },
+              {
+                title: "myPUPQC AI System",
+                desc: "Had the opportunity to contribute to the UI design and development of a university portal with a social media-inspired interface aimed at improving student engagement and accessibility. Assisted in creating modern and responsive layouts for different system features, focusing on usability, organized navigation, and a student-friendly experience.",
+                img:  AIImage,
+                tag1: "System",
+                tag2: "2025",
+              },
+              {
+                title: "Flor De Grace SIS System",
+                desc: "Contributed to the UI interface design of the Flor De Grace Student Information System during internship, assisting in creating responsive and user-friendly layouts for both the SIS platform and website. Helped design organized interface components that improved accessibility, navigation, and overall user experience.",
+                img: SISImage,
+                tag1: "Website",
+                tag2: "2025",
+              },
+              {
+                title: "EcoPlay Hues Website",
+                desc: "Reservation platform.Worked on the Eco Play Hues Website as one of my freelance experiences during college, developing a website for a thesis project focused on promoting unique and eco-friendly crayons.",
+                img: EcoImage,
+                tag1: "App",
+                tag2: "2025",
+              },
+              {
+                title: "Motivational App",
+                desc: "Designed and developed a motivational mobile application as a college project that provides daily inspirational and motivational quotes for users. Created a clean and user-friendly interface focused on accessibility, simple navigation, and an engaging user experience.",
+                img: VividImage,
+                tag1: "System",
+                tag2: "2024",
+              },
+            ].map((project, index) => (
+              <div
+                className="project-card"
+                key={index}
+                style={{ backgroundImage: `url(${project.img})` }}
+                onClick={() => {
+                  // Dispatch custom event with project data
+                  window.dispatchEvent(new CustomEvent('openModal', { 
+                    detail: { 
+                      img: project.img, 
+                      title: project.title, 
+                      desc: project.desc,
+                      tag1: project.tag1,
+                      tag2: project.tag2
+                    } 
+                  }));
+                }}
+              >
+                <div className="project-tags">
+                  <span>{project.tag1}</span>
+                  <span>{project.tag2}</span>
+                </div>
+
+                <div className="project-title">{project.title}</div>
+
+                <div className="project-overlay">
+                  <h2>{project.title}</h2>
+                  <p>{project.desc}</p>
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+          {/* RIGHT */}
+          <button
+            className="slider-btn right"
+            onClick={() => {
+              const slider = document.querySelector(".projects-slider");
+              if (slider) {
+                slider.scrollBy({
+                  left: 400,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
+            &#10095;
+          </button>
+
+        </div>
+
+        {/* MODAL FOR ENLARGED IMAGE */}
+        <div id="imageModal" className="image-modal" style={{ display: 'none' }}>
+          <div className="modal-content">
+            <span className="close-modal">&times;</span>
+            <div className="modal-image-container">
+              <img id="modalImage" src="" alt="Project" />
+            </div>
+            <div className="modal-info">
+              <div className="modal-tags">
+                <span id="modalTag1"></span>
+                <span id="modalTag2"></span>
+              </div>
+              <h2 id="modalTitle"></h2>
+              <p id="modalDesc"></p>
+            </div>
+          </div>
+        </div>
+
+      </section>
 
       <Footer />
     </>

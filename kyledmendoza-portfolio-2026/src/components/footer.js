@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/footer.css";
 
 function Footer() {
@@ -15,11 +16,16 @@ function Footer() {
           San Mateo, Rizal, Philippines 1850
         </span>
 
-        <div className="footer-buttons">
-          <a href="#contact" className="btn primary">Contact Me</a>
-          <a href="#projects" className="btn secondary">Explore Projects</a>
+          <div className="footer-buttons">
+            <Link to="/contact" className="btn primary">
+              Contact Me
+            </Link>
+
+            <Link to="/projects" className="btn secondary">
+              Explore Projects
+            </Link>
+          </div>
         </div>
-      </div>
 
       <div className="footer-bottom">
         <div className="footer-left">

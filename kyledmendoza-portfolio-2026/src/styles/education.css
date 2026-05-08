@@ -356,14 +356,17 @@ html, body, #root {
 .value-card {
   padding: 0.7rem 1.2rem;
   border-radius: 20px;
-  background: #f3f3f3;
   font-size: 0.9rem;
   transition: 0.3s;
+  background-color: transparent;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a !important; 
 }
 
 .value-card:hover {
-  background: #4a90e2;
+  background-color: #1a1a1a;
   color: white;
+  transform: translateY(-2px);
 }
 
 /* GALLERY */
@@ -472,64 +475,95 @@ html, body, #root {
   font-size: 0.95rem;
 }
 
-/* MODAL STYLES */
-.image-modal {
+/* MODAL STYLES - MOBILE FIRST */
+.educ-image-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: fadeIn 0.3s ease;
+  animation: educFadeIn 0.3s ease;
   cursor: pointer;
 }
 
-.modal-content {
+.educ-modal-content {
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  animation: zoomIn 0.3s ease;
+  width: 95%;
+  max-width: 95%;
+  animation: educZoomIn 0.3s ease;
   cursor: default;
+  padding: 0;
 }
 
-.modal-content img {
-  width: auto;
+.educ-modal-content img {
+  width: 100%;
   height: auto;
   max-width: 100%;
-  max-height: 90vh;
-  border-radius: 8px;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
   box-shadow: 0 5px 30px rgba(0,0,0,0.3);
 }
 
-.modal-close {
+.educ-modal-close {
   position: absolute;
-  top: -40px;
+  top: -50px;
   right: 0;
-  background: none;
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
-  font-size: 40px;
+  font-size: 32px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
   padding: 0;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
 }
 
-.modal-close:hover {
-  transform: scale(1.1);
-  color: #4a90e2;
+.educ-modal-close:active {
+  transform: scale(0.95);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile-specific touch optimizations */
+@media (max-width: 599px) {
+  .educ-modal-content {
+    width: 92%;
+    max-width: 92%;
+  }
+  
+  .educ-modal-content img {
+    max-height: 70vh;
+    border-radius: 8px;
+  }
+  
+  .educ-modal-close {
+    top: -45px;
+    right: -5px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Prevent body scroll when modal is open */
+  body.modal-open {
+    overflow: hidden;
+  }
 }
 
 /* Animations */
-@keyframes fadeIn {
+@keyframes educFadeIn {
   from {
     opacity: 0;
   }
@@ -538,9 +572,9 @@ html, body, #root {
   }
 }
 
-@keyframes zoomIn {
+@keyframes educZoomIn {
   from {
-    transform: scale(0.8);
+    transform: scale(0.9);
     opacity: 0;
   }
   to {
@@ -549,7 +583,7 @@ html, body, #root {
   }
 }
 
-/* TABLET */
+/* TABLET AND DESKTOP STYLES (min-width: 600px) */
 @media (min-width: 600px) {
   .learning-cards {
     grid-template-columns: repeat(2, 1fr);
@@ -562,6 +596,20 @@ html, body, #root {
   
   .gallery-item {
     aspect-ratio: 16 / 9;
+  }
+  
+  /* Adjust modal for tablet/desktop */
+  .educ-modal-content {
+    max-width: 90%;
+  }
+  
+  .educ-modal-content img {
+    max-height: 85vh;
+  }
+  
+  .educ-modal-close:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -582,5 +630,9 @@ html, body, #root {
 
   .education-page3-header h2 {
     font-size: 2.6rem;
+  }
+  
+  .educ-modal-content {
+    max-width: 80%;
   }
 }

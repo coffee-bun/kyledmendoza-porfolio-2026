@@ -61,31 +61,20 @@ html, body, #root {
   text-align: center;
   color: #ffffff; /* Pure white text */
   padding: 2rem;
-}
-
-.sidebar-title {
-  font-size: 4rem;
-  font-weight: 300;
-  letter-spacing: 4px;
-  margin-bottom: 4rem;
-  opacity: 1; /* Full visibility for contrast */
-  font-family: monospace;
-}
-
-.get-in-touch h3 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
   font-weight: 500;
-  color: #ffffff;
+  font-size: 2.5rem;
 }
 
-.proj-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  opacity: 0.8;
-  text-align: center;
-  color: #cccccc; /* Slightly dimmed for better readability */
+
+.project-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  margin: 0.75rem 0 1.5rem 0;
+  text-align: justify;
+  letter-spacing: 0.01em;
+  width: 100%;
 }
 
 /* The White Button with Light Blue Hover */
@@ -239,7 +228,7 @@ html, body, #root {
   max-width: 500px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  margin-bottom: 0.75rem;  /* Reduced gap under image */
+  margin-bottom: 1.75rem;  /* Reduced gap under image */
 }
 
 /* Title */
@@ -250,7 +239,7 @@ html, body, #root {
   margin: 0.5rem 0 0.5rem 0;  /* Controls space above and below title */
 }
 
-.proj-descriptionp{
+.proj-description{
   max-width: 600px;
   font-size: 1rem;
   line-height: 1.7;
@@ -306,7 +295,7 @@ html, body, #root {
   }
 }
 
-.modal-overlay {
+.proj-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -319,36 +308,37 @@ html, body, #root {
   z-index: 2000;
 }
 
-.modal-content {
-  background: #1a1a1a; /* Darker theme looks great for galleries */
+.proj-modal-content {
+  background: #1a1a1a00; /* Darker theme looks great for galleries */
   color: white;
-  padding: 40px;
+  padding: 10px;
   border-radius: 12px;
   position: relative;
-  width: 90%;
-  max-width: 900px;
+  width: 100%;
+  max-width: 1100px;
   text-align: center;
+  margin-top: 100px;
 }
 
-.carousel-container {
+.proj-carousel-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
 
-.image-wrapper {
+.proj-image-wrapper {
   flex-grow: 1;
 }
 
-.modal-img-single {
+.proj-modal-img-single {
   width: 100%;
-  max-height: 60vh;
+  max-height: 100vh;
   object-fit: contain; /* Keeps image aspect ratio */
   border-radius: 8px;
 }
 
-.nav-btn {
+.proj-nav-btn {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
@@ -359,17 +349,17 @@ html, body, #root {
   transition: background 0.3s;
 }
 
-.nav-btn:hover {
+.proj-nav-btn:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.image-counter {
+.proj-image-counter {
   margin-top: 10px;
   font-size: 0.9rem;
   opacity: 0.7;
 }
 
-.close-modal-btn {
+.proj-close-modal-btn {
   position: absolute;
   top: 10px;
   right: 20px;

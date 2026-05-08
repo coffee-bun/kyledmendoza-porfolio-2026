@@ -111,8 +111,8 @@ html, body {
 .about-page1col2 {
   width: 100%;
   background: linear-gradient(135deg, #FFFFFA 0%, #f8f9ff 100%);
-  height: 65vh;
-  min-height: 550px;
+  height: 70vh;
+  min-height: 590px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -887,7 +887,7 @@ html, body {
 
 /* Expand on hover */
 .about-experience-card:hover .about-card-description {
-  max-height: 200px;
+  max-height: 250px;
 }
 
 .about-experience-card:hover .about-card-more {
@@ -1061,7 +1061,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
   margin: 3rem auto 2rem auto;
   padding: 1.5rem 2rem;
@@ -1403,8 +1403,8 @@ html, body {
 .capability-card {
   background: #ffffff;
   border-radius: 20px;
-  padding: 2rem;
-  text-align: center;
+  padding: 1.2rem;
+  text-align: justify;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
   position: relative;
@@ -1422,7 +1422,7 @@ html, body {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4a90e2, #7c3aed);
+  background: #0f0f0f; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1440,6 +1440,7 @@ html, body {
   font-weight: 700;
   color: #1a1a2e;
   margin-bottom: 0.8rem;
+  text-align: center;
 }
 
 /* Description */
@@ -1447,8 +1448,6 @@ html, body {
   font-size: 0.95rem;
   color: #555;
   line-height: 1.6;
-
-  /* limit height initially */
   max-height: 70px;
   overflow: hidden;
   transition: max-height 0.3s ease;

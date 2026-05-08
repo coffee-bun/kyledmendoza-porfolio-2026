@@ -289,15 +289,15 @@ const closeImageModal = () => {
         </div>
       </div>
 
-      {/* MODAL FOR ENLARGED IMAGE */}
-      {isModalOpen && selectedImage && (
-        <div className="image-modal" onClick={closeImageModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeImageModal}>×</button>
-            <img src={selectedImage.src} alt={selectedImage.alt} />
-          </div>
-        </div>
-      )}
+{/* MODAL FOR ENLARGED IMAGE */}
+{isModalOpen && selectedImage && (
+  <div className="educ-image-modal" onClick={closeImageModal}>
+    <div className="educ-modal-content" onClick={(e) => e.stopPropagation()}>
+      <button className="educ-modal-close" onClick={closeImageModal}>×</button>
+      <img src={selectedImage.src} alt={selectedImage.alt} />
+    </div>
+  </div>
+)}
 
       <Footer />
     </>
