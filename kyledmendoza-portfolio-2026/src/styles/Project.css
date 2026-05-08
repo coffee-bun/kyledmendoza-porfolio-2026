@@ -1,0 +1,371 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.projects-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Projects Container */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.projects-layout {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 100px); /* Adjust based on footer height */
+}
+
+/* Left Sidebar - Fixed, half screen */
+.left-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 40%;
+  height: 100vh;
+  background: #0f0f0f; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  z-index: 10;
+  border-right: 1px solid #222; 
+}
+
+.sidebar-content {
+  max-width: 80%;
+  text-align: center;
+  color: #ffffff; /* Pure white text */
+  padding: 2rem;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+
+.project-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  margin: 0.75rem 0 1.5rem 0;
+  text-align: justify;
+  letter-spacing: 0.01em;
+  width: 100%;
+}
+
+/* The White Button with Light Blue Hover */
+ .view-prjct-btn {
+  background-color: transparent;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a !important; 
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+ .view-prjct-btn:hover {
+  background-color: #1a1a1a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.contact-btn {
+  border-color: white;
+  background: 1px solid black;
+  border: none;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.contact-btn:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Right Content Area - Takes remaining space */
+.right-content {
+  margin-left: 40%;
+  width: 60%;
+  min-height: 100vh; 
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column; /* Stack containers vertically */
+  align-items: center;
+  padding: 0rem 2rem; /* Add padding at top/bottom for breathing room */
+}
+
+.projects-grid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.projects-grid h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.projects-grid p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .left-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 60vh;
+  }
+  
+  .right-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .projects-layout {
+    flex-direction: column;
+  }
+  
+  .sidebar-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .get-in-touch h3 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Scrollbar Styling */
+.left-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.left-sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.left-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Button */
+.view-project-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  font-size: 0.95rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-project-btn:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
+
+.projects-main-container {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem; /* 👈 Spacing between project cards */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content layout */
+.project-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Image */
+.project-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.75rem;  /* Reduced gap under image */
+}
+
+/* Title */
+.prjcts-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0.5rem 0 0.5rem 0;  /* Controls space above and below title */
+}
+
+.proj-description{
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 1.5rem 0; /* Space above and below text */
+  /* REMOVE max-height and overflow-y to let text breathe */
+  height: auto; 
+  overflow: visible; 
+}
+
+@media (max-width: 768px) {
+
+  /* Reset layout to vertical */
+  .projects-layout {
+    flex-direction: column;
+  }
+
+  /* Left sidebar becomes normal section */
+  .left-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+
+  /* FIX: Right content takes full width */
+  .right-content {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem 0.2rem;
+  }
+
+ .projects-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 👈 pushes button down */
+}
+
+  /* Image scales better */
+  .project-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Text scaling */
+  .prjcts-title {
+    font-size: 1.5rem;
+  }
+
+  .proj-description{
+    font-size: 0.95rem;
+  }
+}
+
+.proj-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.proj-modal-content {
+  background: #1a1a1a00; /* Darker theme looks great for galleries */
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.proj-carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.proj-image-wrapper {
+  flex-grow: 1;
+}
+
+.proj-modal-img-single {
+  width: 100%;
+  max-height: 100vh;
+  object-fit: contain; /* Keeps image aspect ratio */
+  border-radius: 8px;
+}
+
+.proj-nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.proj-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.proj-image-counter {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.proj-close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
